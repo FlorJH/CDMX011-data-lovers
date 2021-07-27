@@ -9,6 +9,7 @@
 	 margin-bottom: 20px;
 }
 #cardMovie{
+	background-color:#05334d9c;
 	margin: 15px auto;
     color:rgb(3, 3, 3);
     width: 230px;
@@ -37,7 +38,7 @@ header{
     
     width: 100%;
     height: 15vh;
-    background-color: greenyellow;
+    background-color: #05334D;
 }
 header nav {
 	float:right;
@@ -56,10 +57,14 @@ header nav a {
 	transition:all 500ms ease;
 }
 
+header nav a:hover {
+	background:lightsteelblue;
+	border-radius:50px;
+}
 footer{
     width: 100%;
     height: 15vh;
-    background-color: rgb(108, 168, 18);
+    background-color: #05334D;
 }
 
 /*
