@@ -1,47 +1,57 @@
-import {example} from './data.js';
+import {example, FiltroDirector} from './data.js';// si es entre parentesis estas exportando una funcion 
 
 import data from './data/ghibli/ghibli.js';
 
+const container = document.getElementById('card');
 
 //Crea las tarjetas y muestra la data de la pelicula. 
 window.onload=function print(){
-const container = document.getElementById('card');
+
 const allMovies= data.films.map(movie => 
     `<div id="cardMovie">
     <img id="imgMovie" src="${movie.poster}">
-    <h4 id="titleMovie">${movie.title}</h4>
-    <buttom id="bntViewMovie">More Detalls</button>
+    <!--<div id="info">
+    <h4 class="tarjeta" id="titleMovie">${movie.title}</h4>
+    <h5>Fecha de esctreno: ${movie.release_date}</h5>
+    </div>-->
+    <buttom id="bntViewMovie" class="titleMovie">${movie.title}</button>
     </div>
     `
 ); container.innerHTML=allMovies.join('');
 }
 
 
+var selectDirector = document.querySelector('#directores');
+selectDirector.addEventListener('change', function() {
+   var val= document.getElementById('directores').value;//agarra el valor del director 
+    const directores= FiltroDirector(data, val).map(movie =>
+        `<div id="cardMovie">
+        <img id="imgMovie" src="${movie.poster}">
+        <!--<div id="info">
+        <h4 class="tarjeta" id="titleMovie">${movie.title}</h4>
+        <h5>Fecha de esctreno: ${movie.release_date}</h5>
+        </div>-->
+        <buttom id="bntViewMovie" class="titleMovie">${movie.title}</button>
+        </div>
+        ` );
+        container.innerHTML=directores.join('');
+  
+});
+
+
+
+
+
+
+
 /*
-data.films.forEach(movie=> {
-    let cardMovie = document.createElement("div");         // Create a <div> node
-    let imgMovi = document.createElement("img");            //Cracion de imagen
-    let btnDetalls = document.createElement("button");
-    cardMovie.id="cardMovie";
-    imgMovi.id="imgMovie";
-    
-    imgMovi.src=`${movie.poster}`;
-    
-    
-    let movieTitle = document.createTextNode(movie.title);       // Create a text node
-    
-    cardMovie.appendChild(movieTitle);                              // Append the text to <P>
-    cardMovie.appendChild(imgMovi);
-     cardMovie.appendChild(btnDetalls);
+ var alfabeticamenteAB=data.films.map(function(director) { // az
+    return director.title;
+ });
+ console.log(alfabeticamenteAB.sort());
 
-
-    document.getElementById("card").appendChild(cardMovie);                    
-    
-    //document.getElementById("card").appendChild(imgMovi);
  
-});*/
-
-
-
+ console.log( alfabeticamenteAB.reverse());// de la z a la A
+*/
 
 

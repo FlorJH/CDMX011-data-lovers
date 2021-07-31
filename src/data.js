@@ -4,8 +4,12 @@ export const example = () => {
   return 'example';
 };
 
-export const anotherExample = () => {
-  return 'OMG';
+export const FiltroDirector= (data, selectDirector) => {
+  var filtro=data.films.filter(function(dir){
+    //console.log(dir.director);
+    return dir.director == selectDirector;//selectDirector es la variable del listboxs
+})
+return filtro;
 };
 
 

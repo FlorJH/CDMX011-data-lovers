@@ -1,70 +1,100 @@
 *{
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+#bntViewMovie{
+	text-align: center;
+	padding: 5px 8px;
+    margin-top: -11vh;
+	color: azure;
+	font-size: 3.2vh;
+	background:#143dd0d2;
+	border-bottom-left-radius:20px;
+	border-bottom-right-radius:20px;
+	height:71px;
+}
 #card{
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
  	flex-wrap: wrap;
-	 margin-bottom: 20px;
+	background-color: khaki;
+	margin: 30px 30px;
 }
-#cardMovie{
-	background-color:#05334d9c;
-	margin: 15px auto;
+#cardMovie{	
+	display: flex;
+	flex-direction: column;
+	margin: 15px 15px;
     color:rgb(3, 3, 3);
     width: 230px;
 	height: 300px;
-    padding: 20px;
+    /*padding: 20px;*/
 	box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.377);
     border-radius: 20px;
 }
-#imgMovie{
-	width: 12vw;
-	height: 30vh;	
-	margin-bottom: 10px;
-	border-radius: 10px;
+
+
+#imgMovie{ 	
+	/*display:inline-block;
+	position:absolute;*/
+	width: 230px;
+	height: 300px;	
+	border-radius: 20px;
 }
-#titleMovie{
+.titleMovie{
 	text-align: center;
-	
 }
-#bntViewMovie{
-	color: azure;
-	font-size: 4vh;
-	background:#05334D;
-	border-radius:5px;
-}
+
 header{
-    
+	position:sticky;
+	background-image:url(https://matutinografico.com/wp-content/uploads/2020/01/ghilbi.jpg);
     width: 100%;
     height: 15vh;
-    background-color: #05334D;
+	top: 0;
+	left: 0;
+	padding-top: 0px;
+	margin-bottom: 8vh;
+	
+}
+header::before{
+	width: 100%;
+    height: 16.5vh;
+	content:'';
+	position: absolute;
+    top: 0;
+	left: 0;
+	right: 0;
+	background-color: #2a4e63cb;
 }
 header nav {
+	position: sticky;
+	display:inline-block;
+	top: 0px;
 	float:right;
 	line-height:25px;
 }
 header nav a {
-	display:inline-block;
+	/*display:inline-block;*/
+	
 	color:#fff;
 	text-decoration:none;
 	padding:10px 20px;
 	line-height:normal;
 	font-size:20px;
-	font-weight:bold;
+	/*font-weight:bold;
 	-webkit-transition:all 500ms ease;
 	-o-transition:all 500ms ease;
-	transition:all 500ms ease;
+	transition:all 500ms ease;*/
 }
 
-header nav a:hover {
+ a:hover {
 	background:lightsteelblue;
 	border-radius:50px;
 }
 footer{
+	
     width: 100%;
     height: 15vh;
     background-color: #05334D;
+   
 }
 
 /*
