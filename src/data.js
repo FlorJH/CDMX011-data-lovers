@@ -17,6 +17,20 @@ export const filtroDirector= (data, selectDirector) => {
 return filtro;
 };
 
+export const filtroProductor= (data, selectProductor) => {
+  let filtro;
+  if(selectProductor == 1){
+    filtro= data.films.filter(function(pro){
+      return pro.producer;//selectDirector es la variable del listboxs
+  })
+  }else{
+   filtro=data.films.filter(function(pro){
+    return pro.producer == selectProductor;//selectDirector es la variable del listboxs
+})}
+return filtro;
+};
+
+
 
 /*export const orderByAZ=(data){
   alfabeticamenteAB=data.films.map(function(movies) { // az
