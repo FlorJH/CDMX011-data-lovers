@@ -1,4 +1,4 @@
-import { filtroDirector} from './data.js';// si es entre parentesis estas exportando una funcion 
+import { filtroDirector, filtroProductor} from './data.js';// si es entre parentesis estas exportando una funcion 
 
 import data from './data/ghibli/ghibli.js';
 
@@ -7,6 +7,8 @@ import data from './data/ghibli/ghibli.js';
 const container = document.getElementById('card');
 const selectDirector = document.querySelector('#directores');
 const btnOrderAZ = document.getElementById('orderAZ');
+const selectProductor = document.querySelector('#productores');
+//const btnOrderAZ = document.getElementById('orderAZ');
 
 
 //Crea las tarjetas y muestra la data de la pelicula. 
@@ -39,6 +41,16 @@ selectDirector.addEventListener('change', function() {
         ` );
         container.innerHTML=directores.join('');
   
+});
+selectProductor.addEventListener('change', function() {
+    let valor= document.getElementById('productores').value;//agarra el valor del director 
+     const productores= filtroProductor(data, valor).map(movie =>
+         `<div id="cardMovie">
+         <img id="imgMovie" src="${movie.poster}">
+         <buttom id="bntViewMovie" class="titleMovie">${movie.title}</button>
+         </div>
+         ` );
+         container.innerHTML=productores.join('');
 });
 
 
