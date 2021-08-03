@@ -6,8 +6,7 @@ import data from './data/ghibli/ghibli.js';
 
 const container = document.getElementById('card');
 const selectDirector = document.querySelector('#directores');
-
-//const btnOrderAZ = document.getElementById('orderAZ');
+const btnOrderAZ = document.getElementById('orderAZ');
 
 
 //Crea las tarjetas y muestra la data de la pelicula. 
@@ -43,23 +42,32 @@ selectDirector.addEventListener('change', function() {
 });
 
 
-/*btnOrderAZ.addEventListener('click', function() {
-    const orderAZ=data.films.map((movies) =>
-         `<div id="cardMovie">
-         <img id="imgMovie" src="${movies.poster}">
-         <buttom id="bntViewMovie" class="titleMovie">${movies.title}</button>
-         </div>
-         ` );
-         container.innerHTML=orderAZ.join('');
-   
- });*/
+
+ 
+ btnOrderAZ.addEventListener('click', function() {
+     
+var alfabeticamenteAB=data.films.map(function(movies) { 
+    movies.title.sort(function (){
+       return movies.title
+    })
+
+    
+    
+   });
+   alfabeticamenteAB.sort();
+});
 
 
+ /*
+ let cardMovies= (data) => {
 
-/*var alfabeticamenteAB=data.films.map(function(movies) { // az
+};*/
+
+
+/*var alfabeticamente=data.films.map(function(movies) { // az
     return movies.title;
  });
- console.log(alfabeticamenteAB.sort());
+ console.log(alfabeticamente.sort());
 
  
  //console.log( alfabeticamenteAB.reverse());// de la z a la A

@@ -18,14 +18,7 @@ return filtro;
 };
 
 
-/*export const orderByAZ=(data){
-  alfabeticamenteAB=data.films.map(function(movies) { // az
-    return movies.title.sort();
- });
-};*/
 
-
-//export const filterRotten()=>{};
 
 
 

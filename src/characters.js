@@ -3,27 +3,31 @@ import data from './data/ghibli/ghibli.js';
 
 const container = document.getElementById('card');
 
-let personajes;
+let htmlbonito=""
 
- data.films.map(people => {
-  personajes= people.people.map(values =>
-        `
-        <div id="cardPeople">
-        <img id="imgPeople" width="50px" height="50px" src="${values.img}">
-        <div id="info">
-        <h4 class="tarjeta" id="titlePeople">${values.name}</h4>
-        <h5>Genero: ${values.gender}</h5>
-        </div>
-        <p>${values.age}</p>
-        <p>${values.specie}</p>
-        </div>
-        `
-); container.innerHTML=personajes.join('');
+data.films.forEach(people => {
+    people.people.forEach(values => {
+        let html = generarhtml(values)
+        htmlbonito += html
+    }
+    )
+});
 
-} ); 
+container.innerHTML=htmlbonito
 
-
-
+function generarhtml(values){
+    return `
+    <div id="cardPeople">
+    <img id="imgPeople" width="50px" height="50px" src="${values.img}">
+    <div id="info">
+    <h4 >${values.name}</h4>
+    <h5>Genero: ${values.gender}</h5>
+    </div>
+    <p>${values.age}</p>
+    <p>${values.specie}</p>
+    </div>
+    `
+}
 
 /*
 
