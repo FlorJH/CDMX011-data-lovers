@@ -1,12 +1,12 @@
 *{
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 #bntViewMovie{
 	text-align: center;
 	padding: 5px 8px;
-    margin-top: -11vh;
+    margin-top: -5.2vw;
 	color: azure;
-	font-size: 3.2vh;
+	font-size: 1.3em;
 	background:#143dd0d2;
 	border-bottom-left-radius:20px;
 	border-bottom-right-radius:20px;
@@ -16,8 +16,11 @@
 	display: flex;
 	flex-direction: row;
  	flex-wrap: wrap;
-	background-color: khaki;
-	margin: 30px 30px;
+	justify-content: center;
+	align-self: center;
+	justify-content:space-evenly;
+	margin: 5vh 9vw;
+	/*background-color: #095866;*/
 }
 #cardMovie{	
 	display: flex;
@@ -26,7 +29,6 @@
     color:rgb(3, 3, 3);
     width: 230px;
 	height: 300px;
-    /*padding: 20px;*/
 	box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.377);
     border-radius: 20px;
 }
@@ -43,15 +45,34 @@
 	text-align: center;
 }
 
+
+/*HEADER*/
+.wrapper {
+	position: sticky;
+	width:90%; /* Establecemos que el ancho sera del 90% */
+	max-width:1500px; /* Aqui le decimos que el ancho máximo sera de 1000px */
+	margin:auto; /* Centramos los elementos */
+	overflow:hidden; /* Eliminamos errores de float */
+}
 header{
 	position:sticky;
 	background-image:url(https://matutinografico.com/wp-content/uploads/2020/01/ghilbi.jpg);
     width: 100%;
-    height: 15vh;
+    height: 16.5vh;
 	top: 0;
 	left: 0;
 	padding-top: 0px;
 	margin-bottom: 8vh;
+	overflow:hidden; /* Eliminamos errores de float */
+	
+}
+ .logo {
+	 position: sticky;
+	margin:35px;
+	color:#ffffff;
+	font-size:50px;
+	line-height:25px;
+	float:left;
 	
 }
 header::before{
@@ -66,19 +87,24 @@ header::before{
 }
 header nav {
 	position: sticky;
-	display:inline-block;
-	top: 0px;
+	
+	margin-top: 15px;
 	float:right;
 	line-height:25px;
 }
 header nav a {
 	/*display:inline-block;*/
 	
+	display:inline-block;
 	color:#fff;
+	background-color: rgba(249, 252, 252, 0.075);
 	text-decoration:none;
+	margin:20px 0px;
 	padding:10px 20px;
 	line-height:normal;
-	font-size:20px;
+	font-weight: bold;
+	font-size:1.3em;
+	border-radius: 45px;
 	/*font-weight:bold;
 	-webkit-transition:all 500ms ease;
 	-o-transition:all 500ms ease;
@@ -86,32 +112,86 @@ header nav a {
 }
 
  a:hover {
-	background:lightsteelblue;
+	background:rgb(184, 207, 236);
 	border-radius:50px;
 }
+
+/*Bonotens order by*/
+.btnOrderBy > button {
+	width: 50px;
+	height: 35px;
+	border-color: #fff;
+	background-color:darkseagreen;
+	margin-top: 10px;
+}
+
+/* FOOTHER*/
 footer{
-	
+	padding:40px 0;
+  color:#ffffff;
     width: 100%;
-    height: 15vh;
-    background-color: #05334D;
+    height: 10vh;
+    background-color: #05334dc0;
    
 }
 
-/*
-#flexContainer{
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: stretch;
-background-color: antiquewhite;
-padding: 10px;
-border: 2px solid black;
-}
+  .social {
+		text-align:center;
+		padding-bottom:25px;
+	  }
+	  
+	 .social > a {
+		font-size:24px;
+		width:40px;
+		height:40px;
+		line-height:40px;
+		display:inline-block;
+		text-align:center;
+		border-radius:50%;
+		border:1px solid #ccc;
+		margin:0 8px;
+		color:inherit;
+		opacity:0.75;
+	  }
+	  
+	   .social > a:hover {
+		opacity:0.9;
+	  }
+	  
+	  .copyright {
+		margin-top:15px;
+		text-align:center;
+		font-size:13px;
+		color:rgb(255, 253, 253);
+		margin-bottom:0;
+	  }
 
-#flexContainer div{
-    background-color: blue;
-    width: 100px;
-    margin: 10px;
-    text-align: center;
-    line-height: 70px;
-}*/
+
+/*LIST BOX*/
+	  #filters{
+		  display: flex;
+		  flex-direction: row;
+		
+		  justify-content: space-around;
+		  background-color: #defe9a73;
+		  margin: 40px 160px;
+
+	  }
+	  
+  
+  .box select {
+	background-color: #095866;
+	color: white;
+	padding: 12px;
+	width: 200px;
+	border: none;
+	font-size: 1.5vw;
+	box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+	-webkit-appearance: button;
+	appearance: button;
+	outline: none;
+  }
+
+
+  /* CARDS PEOPLE*/
+
