@@ -24,38 +24,47 @@
 
 
     <main>
-   <!--    <div id="filters">
-<div class="box"> 
-  <label class="directorList">Directores</label> 
-      <select id="directores" name="select" >
-        <option value="1" selected>Directores</option>
-        <option value="Hayao Miyazaki">Hayao Miyazaki</option>
-        <option value="Isao Takahata">Isao Takahata</option>
-        <option value="Yoshifumi Kondō">Yoshifumi Kondō</option>
-        <option value="Hiroyuki Morita">Hiroyuki Morita</option>
-        <option value="Gorō Miyazaki">Gorō Miyazaki</option>
-        <option value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
-      </select>
-</div>
-     <div class="box">
-      <select id="rt-score" name="select" >
-        <option value="1" selected>Score</option>
-        <option value="80">Great</option>
-        <option value="50">Good</option>
-        <option value="49">Not good</option>
-      </select>
-     </div>
-
-     <div>
-      <button><i class="fas fa-sort-alpha-up"></i></button>
-      <button><i class="fas fa-sort-alpha-down-alt"></i></button>
-    </div>
-</div></main>
-      -->
+      <div id="filters">
+        <div class="box"> 
+          <!-- <label class="directorList">Directores</label> -->
+              <select id="peliculas" name="select" >
+                <option value="1" selected>Filter by Movie</option>
+                <option value="Hayao Miyazaki">Hayao Miyazaki</option>
+                <option value="Isao Takahata">Isao Takahata</option>
+                <option value="Yoshifumi Kondō">Yoshifumi Kondō</option>
+                <option value="Hiroyuki Morita">Hiroyuki Morita</option>
+                <option value="Gorō Miyazaki">Gorō Miyazaki</option>
+                <option value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
+              </select>
+        </div>
+        <div class="box">
+          <select id="productores" name="select" >
+           <option value="1" selected>Filter by Gender</option>
+           <option value="Hayao Miyazaki">Hayao Miyazaki</option>
+           <option value="Isao Takahata">Isao Takahata</option>
+           <option value="Toru Hara">Toru Hara</option>
+           <option value="Toshio Suzuki">Toshio Suzuki</option>
+           <option value="Yoshiaki Nishimura">Yoshiaki Nishimura</option>
+         </select>
+        </div>
+             <div class="box">
+              <select id="rt-score" name="select" >
+                <option value="1" selected>Filter by Specie</option>
+                <option value="80">Great</option>
+                <option value="50">Good</option>
+                <option value="49">Not good</option>
+              </select>
+             </div>
+        
+             <div class="btnOrderBy">
+              <button id="orderAZ"><i class="fas fa-sort-alpha-up fa-2x"></i></button>
+              <button id="orderZA"><i class="fas fa-sort-alpha-down fa-2x"></i></button>
+            </div>
+        </div>
        <div id="card">
 
        </div>
-    </div>
+    
   </main>
 
 
