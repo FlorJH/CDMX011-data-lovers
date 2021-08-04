@@ -1,9 +1,12 @@
+import { filtroByMovie } from './data.js';// si es entre parentesis estas exportando una funcion 
+
 import data from './data/ghibli/ghibli.js';
 
 
 const container = document.getElementById('card');
+const selectMovie = document.querySelector('#movies');
 
-let htmlDom="";
+let htmlDom = "";
 
 data.films.forEach(people => {
     people.people.forEach(values => {
@@ -13,9 +16,9 @@ data.films.forEach(people => {
     )
 });
 
-container.innerHTML=htmlDom;
+container.innerHTML = htmlDom;
 
-function generarhtml(values){
+function generarhtml(values) {
     return `
     <div id="cardPeople">
     <img id="imgPeople" src="${values.img}">
@@ -30,37 +33,23 @@ function generarhtml(values){
 }
 
 
-/*
+/*Creacion de listbox dinamico */
+let listBox = data.films.map(title =>
+    `
+    <option value="${title.title}">${title.title}</option>
+    `
+); selectMovie.innerHTML = `<option value="1" selected>Filter by Movie</option>` + listBox;
 
-selectPelicula.addEventListener('change', function() {
 
-    let movieSelected= 'My Neighbor Totoro';//document.getElementById('directores').value;//agarra el valor del director 
-    data.films.map(movie =>{
-    const personaje= filtroPelicula(movie.people, movieSelected).map(values =>
-        
-        `
-        <div id="cardPeople">
-        <img id="imgPeople" width="50px" height="50px" src="${values.img}">
-        <div id="info">
-        <h4 class="tarjeta" id="titlePeople">${values.name}</h4>
-        <h5>Fecha de esctreno: ${values.gender}</h5>
-        </div>
-        <p>${values.age}</p>
-        <p>${values.specie}</p>
-        </div>
-        `
-        );container.innerHTML=personaje.join('');
 
-    });     
-   
+/*filtrado de personaje por pelicula */ 
+selectMovie.addEventListener('change', function() {
+    let valor= document.getElementById('movies').value;//agarra el valor del director 
+    filtroByMovie(data, valor).forEach(PeopleMovie => {
+        let dato = PeopleMovie.people.map(values => {
+            return generarhtml(values)
+        }
+        ); container.innerHTML = dato.join('');
+    
+    });
 });
-
-export const filtroPelicula= (data, movieSelected) => {
-const people= data.filter(title => {
-   
-    if( movieSelected == people.title) {
-        
-        return title.people;
-    }
- });console.log(people);
-}*/

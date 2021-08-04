@@ -33,6 +33,7 @@ window.onload=function print(){
 
 selectDirector.addEventListener('change', function() {
    let valor= document.getElementById('directores').value;//agarra el valor del director 
+   console.log(valor);
     const directores= filtroDirector(data, valor).map(movie =>
         `<div id="cardMovie">
         <img id="imgMovie" src="${movie.poster}">
@@ -42,6 +43,7 @@ selectDirector.addEventListener('change', function() {
         container.innerHTML=directores.join('');
   
 });
+
 selectProductor.addEventListener('change', function() {
     let valor= document.getElementById('productores').value;//agarra el valor del director 
      const productores= filtroProductor(data, valor).map(movie =>
@@ -58,7 +60,7 @@ selectProductor.addEventListener('change', function() {
  
  btnOrderAZ.addEventListener('click', function() {
      
-var alfabeticamenteAB=data.films.map(function(movies) { 
+let alfabeticamenteAB=data.films.map(function(movies) { 
     movies.title.sort(function (){
        return movies.title
     })
