@@ -6,13 +6,13 @@ import data from './data/ghibli/ghibli.js';
 
 const container = document.getElementById('card');
 const selectDirector = document.querySelector('#directores');
-const btnOrderAZ = document.getElementById('orderAZ');
+//const btnOrderAZ = document.getElementById('orderAZ');
 const selectProductor = document.querySelector('#productores');
 //const btnOrderAZ = document.getElementById('orderAZ');
 
 
 //Crea las tarjetas y muestra la data de la pelicula. 
-window.onload=function print(){
+//window.onload=function print(){
 
     const allMovies= data.films.map(movie => 
         `
@@ -26,14 +26,14 @@ window.onload=function print(){
         </div>
         `
     ); container.innerHTML=allMovies.join('');
-    }
+    //}
 
     
 
 
 selectDirector.addEventListener('change', function() {
    let valor= document.getElementById('directores').value;//agarra el valor del director 
-   console.log(valor);
+  // console.log(valor);
     const directores= filtroDirector(data, valor).map(movie =>
         `<div id="cardMovie">
         <img id="imgMovie" src="${movie.poster}">
@@ -48,28 +48,19 @@ selectProductor.addEventListener('change', function() {
     let valor= document.getElementById('productores').value;//agarra el valor del director 
      const productores= filtroProductor(data, valor).map(movie =>
          `<div id="cardMovie">
-         <img id="imgMovie" src="${movie.poster}">
+         <img id="imgMovie" alt="Movie poster" src="${movie.poster}">
          <buttom id="bntViewMovie" class="titleMovie">${movie.title}</button>
          </div>
          ` );
          container.innerHTML=productores.join('');
 });
 
+/*orden afabetico */
 
-
- 
- btnOrderAZ.addEventListener('click', function() {
-     
-let alfabeticamenteAB=data.films.map(function(movies) { 
-    movies.title.sort(function (){
-       return movies.title
-    })
-
-    
-    
-   });
-   alfabeticamenteAB.sort();
-});
+/*var alfabeticamente=data.films.map(function(movies) { // az
+    return movies.title;
+ });*/
+ //console.log(alfabeticamente.sort());
 
 
  /*

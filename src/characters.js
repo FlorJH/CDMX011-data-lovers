@@ -1,4 +1,4 @@
-import { filtroByMovie } from './data.js';// si es entre parentesis estas exportando una funcion 
+import { filtroByMovie, filtroBygender } from './data.js';// si es entre parentesis estas exportando una funcion 
 
 import data from './data/ghibli/ghibli.js';
 
@@ -44,7 +44,7 @@ let listBox = data.films.map(title =>
 
 /*filtrado de personaje por pelicula */ 
 selectMovie.addEventListener('change', function() {
-    let valor= document.getElementById('movies').value;//agarra el valor del director 
+    let valor= document.getElementById('movies').value;//agarra el valor del pelicula seleccionada 
     filtroByMovie(data, valor).forEach(PeopleMovie => {
         let dato = PeopleMovie.people.map(values => {
             return generarhtml(values)
@@ -53,3 +53,34 @@ selectMovie.addEventListener('change', function() {
     
     });
 });
+
+/*filtrado por especies*/
+  data.films.forEach(function(people){
+    let filtro=people.people.filter(function(peopleBySpecie){
+       return peopleBySpecie.specie == "Human"; //regresara la porcion del objeto que corresponde a dicha peli
+        });
+        //console.log(filtro);
+        return filtro
+   });
+
+console.log(filtroBygender(data, "Male"));
+
+   /* data.films.forEach(function(p){
+    let filtro1=p.people.filter(function(peopleByGender){
+        
+       return peopleByGender.gender == "Male"; //regresara la porcion del objeto que corresponde a dicha peli
+        });
+        return filtro1
+   });*/
+
+//console.log(x);
+
+//console.log(filtroBySpecie(data));
+
+/*let filtrado=filtroBySpecie(data).forEach(values =>{
+    console.log(values.gender);
+    return values.gender;
+
+})
+
+console.log(filtrado);*/

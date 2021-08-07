@@ -1,9 +1,5 @@
 // estas funciones son de ejemplo
 
-export const example = () => {
-  return 'example';
-};
-
 export const filtroDirector= (data, selectDirector) => {
   let filtro;
   if(selectDirector == 1){
@@ -39,6 +35,20 @@ export const filtroByMovie= (data, movieSelected) => {
       })
       return filtro;
   }
+  
+
+  
+  export const filtroBygender= (data, gender) => {
+    
+  data.films.forEach(function(pelicula) {
+      const filtro1=pelicula.people.filter(function(personajes){
+        //return personajes.gender == gender;
+          
+          //regresara la porcion del objeto que corresponde a dicha peli
+          });
+          return filtro1
+     });
+    }
 
 
 
