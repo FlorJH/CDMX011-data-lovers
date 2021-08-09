@@ -1,4 +1,4 @@
-import { filtroDirector, filtroProductor} from './data.js';// si es entre parentesis estas exportando una funcion 
+import { filtroByScore, filtroDirector, filtroProductor, filtroABC } from './data.js';
 
 import data from './data/ghibli/ghibli.js';
 
@@ -6,109 +6,67 @@ import data from './data/ghibli/ghibli.js';
 
 const container = document.getElementById('card');
 const selectDirector = document.querySelector('#directores');
-//const btnOrderAZ = document.getElementById('orderAZ');
 const selectProductor = document.querySelector('#productores');
-//const btnOrderAZ = document.getElementById('orderAZ');
+const selectScore = document.querySelector('#rt-score');
+const btnOrderAZ = document.querySelector('#orderAZ');
+const btnOrderZA = document.querySelector('#orderZA');
 
 
 //Crea las tarjetas y muestra la data de la pelicula. 
-//window.onload=function print(){
 
-    const allMovies= data.films.map(movie => 
-        `
+
+function generarhtml(movie) {
+    return `
         <div id="cardMovie">
         <img id="imgMovie" src="${movie.poster}">
-        <!--<div id="info">
-        <h4 class="tarjeta" id="titleMovie">${movie.title}</h4>
-        <h5>Fecha de esctreno: ${movie.release_date}</h5>
-        </div>-->
         <buttom id="bntViewMovie" class="titleMovie">${movie.title}</button>
         </div>
         `
-    ); container.innerHTML=allMovies.join('');
-    //}
-
-    
-
-
-selectDirector.addEventListener('change', function() {
-   let valor= document.getElementById('directores').value;//agarra el valor del director 
-  // console.log(valor);
-    const directores= filtroDirector(data, valor).map(movie =>
-        `<div id="cardMovie">
-        <img id="imgMovie" src="${movie.poster}">
-        <buttom id="bntViewMovie" class="titleMovie">${movie.title}</button>
-        </div>
-        ` );
-        container.innerHTML=directores.join('');
-  
-});
-
-selectProductor.addEventListener('change', function() {
-    let valor= document.getElementById('productores').value;//agarra el valor del director 
-     const productores= filtroProductor(data, valor).map(movie =>
-         `<div id="cardMovie">
-         <img id="imgMovie" alt="Movie poster" src="${movie.poster}">
-         <buttom id="bntViewMovie" class="titleMovie">${movie.title}</button>
-         </div>
-         ` );
-         container.innerHTML=productores.join('');
-});
-
-/*orden afabetico */
-
-/*var alfabeticamente=data.films.map(function(movies) { // az
-    return movies.title;
- });*/
- //console.log(alfabeticamente.sort());
-
-
- /*
- let cardMovies= (data) => {
-
-};*/
-
-
-/*var alfabeticamente=data.films.map(function(movies) { // az
-    return movies.title;
- });
- console.log(alfabeticamente.sort());
-
- 
- //console.log( alfabeticamenteAB.reverse());// de la z a la A
-
-
-
-
- 
-//const selectScore = document.querySelector('#rt-score');
-
-
-/* selectScore.addEventListener('change', function(){
-    let scoreValue= document.getElementById('re-score').value;
- })
-
-
-
-export const filterScore= (data, selectScore) => {
-  let filtro;
-  if(selectScore == 1){
-    filtro= data.films.filter(function(dir){
-      return dir.title;//selectDirector es la variable del listboxs
-  })}
-if(selectScore == 80){
-    filtro=data.films.filter(function(dir){
-        return dir.rt_score >= 80;
-    })
 }
-if( selectScore == 50){
-    filtro=data.films.filter(function(dir){
-        return (dir.rt_score >= 50) && (dir.rt_score <= 79);
-    })
-  }else{
-   filtro=data.films.filter(function(dir){
-    return dir.rt_score <= 49;
-})}
-console.log(filtro);
-return filtro;
-};*/
+
+const allMovies = data.films.map(movie =>
+    generarhtml(movie)
+); container.innerHTML = allMovies.join('');
+
+
+
+
+
+selectDirector.addEventListener('change', function () {
+    let valorDirector = document.getElementById('directores').value;//agarra el valor del director 
+    const directores = filtroDirector(data, valorDirector).map(movie =>
+        generarhtml(movie));
+    container.innerHTML = directores.join('');
+
+});
+
+selectProductor.addEventListener('change', function () {
+    let valorProductor = document.getElementById('productores').value;//agarra el valor del productor 
+    const productores = filtroProductor(data, valorProductor).map(movie =>
+        generarhtml(movie));
+    container.innerHTML = productores.join('');
+});
+
+
+selectScore.addEventListener('change', function () {
+    let valorScore = document.getElementById('rt-score').value;//agarra el valor del score 
+    const score = filtroByScore(data, valorScore).map(movie =>
+        generarhtml(movie));
+    container.innerHTML = score.join('');
+});
+
+btnOrderAZ.addEventListener('click', function () {
+    //let valorScore= document.getElementById('rt-score').value;//agarra el valor del score 
+    const abc = filtroABC(data).map(movie =>
+        generarhtml(movie));
+    container.innerHTML = abc.join('');
+});
+
+
+btnOrderZA.addEventListener('click', function () {
+    //let valorScore= document.getElementById('rt-score').value;//agarra el valor del score 
+    const abc = filtroABC(data).map(movie =>
+        generarhtml(movie));
+    container.innerHTML = abc.reverse().join('');
+});
+

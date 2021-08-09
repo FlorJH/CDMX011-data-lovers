@@ -1,10 +1,11 @@
-import { filtroByMovie, filtroBygender } from './data.js';// si es entre parentesis estas exportando una funcion 
+import { filtroByMovie } from './data.js';// si es entre parentesis estas exportando una funcion 
 
 import data from './data/ghibli/ghibli.js';
 
 
 const container = document.getElementById('card');
 const selectMovie = document.querySelector('#movies');
+const selectGender = document.querySelector('#gender');
 
 let htmlDom = "";
 
@@ -42,45 +43,55 @@ let listBox = data.films.map(title =>
 
 
 
-/*filtrado de personaje por pelicula */ 
-selectMovie.addEventListener('change', function() {
-    let valor= document.getElementById('movies').value;//agarra el valor del pelicula seleccionada 
+/*filtrado de personaje por pelicula */
+selectMovie.addEventListener('change', function () {
+    let valor = document.getElementById('movies').value;//agarra el valor del pelicula seleccionada 
     filtroByMovie(data, valor).forEach(PeopleMovie => {
         let dato = PeopleMovie.people.map(values => {
             return generarhtml(values)
         }
         ); container.innerHTML = dato.join('');
-    
+
     });
 });
 
 /*filtrado por especies*/
-  data.films.forEach(function(people){
-    let filtro=people.people.filter(function(peopleBySpecie){
-       return peopleBySpecie.specie == "Human"; //regresara la porcion del objeto que corresponde a dicha peli
-        });
-        //console.log(filtro);
-        return filtro
-   });
+/* data.films.forEach(function(people){
+   let filtro=people.people.filter(function(peopleBySpecie){
+      return peopleBySpecie.specie == "Human"; //regresara la porcion del objeto que corresponde a dicha peli
+       });
+       //console.log(filtro);
+       return filtro
+  });
+*/
 
-console.log(filtroBygender(data, "Male"));
+//filtroByGender(data,'Male');
 
-   /* data.films.forEach(function(p){
-    let filtro1=p.people.filter(function(peopleByGender){
-        
-       return peopleByGender.gender == "Male"; //regresara la porcion del objeto que corresponde a dicha peli
-        });
-        return filtro1
-   });*/
 
-//console.log(x);
 
-//console.log(filtroBySpecie(data));
 
-/*let filtrado=filtroBySpecie(data).forEach(values =>{
-    console.log(values.gender);
-    return values.gender;
+let filtro1;
+let mostrar = [];
 
+const filtroByGender = (data, gender) => {
+    data.films.forEach(dataGhibli => {
+        filtro1 = dataGhibli.people.filter(personajes => {
+            return personajes.gender == gender; //regresara la porcion del objeto que corresponde a dicha peli
+        })
+        mostrar.push(filtro1);
+    })
+   console.log(mostrar);
+    return mostrar;
+}
+
+
+/*filtrado por genero*/
+selectGender.addEventListener('change', function() {
+    let valor= document.getElementById('gender').value;//agarra el valor del genero seleccionada
+filtroByGender(data,valor).forEach(dataGender=>{
+    console.log(dataGender.name);
 })
+});
 
-console.log(filtrado);*/
+//console.log(mostrar);
+//console.log(filtroByGender(data, 'Male'));
