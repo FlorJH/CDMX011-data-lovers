@@ -1,4 +1,4 @@
-import { filtroByScore, filtroDirector, filtroProductor, filtroABC } from './data.js';
+import { filterByScore, filtroDirector, filterProducer, filterABC } from './data.js';
 
 import data from './data/ghibli/ghibli.js';
 
@@ -40,7 +40,7 @@ selectDirector.addEventListener('change', function () {
 
 selectProductor.addEventListener('change', function () {
     let valorProductor = document.getElementById('productores').value;//agarra el valor del productor 
-    const producers = filtroProductor(data, valorProductor).map(movie =>
+    const producers = filterProducer(data, valorProductor).map(movie =>
         generarhtml(movie));
     container.innerHTML = producers.join('');
 });
@@ -48,20 +48,20 @@ selectProductor.addEventListener('change', function () {
 
 selectScore.addEventListener('change', function () {
     let valorScore = document.getElementById('rt-score').value;//agarra el valor del score 
-    const score = filtroByScore(data, valorScore).map(movie =>
+    const score = filterByScore(data, valorScore).map(movie =>
         generarhtml(movie));
     container.innerHTML = score.join('');
 });
 
 btnOrderAZ.addEventListener('click', function () {
-    const orderAZ = filtroABC(data).map(movie =>
+    const orderAZ = filterABC(data).map(movie =>
         generarhtml(movie));
     container.innerHTML = orderAZ.join('');
 });
 
 
 btnOrderZA.addEventListener('click', function () {
-    const ordenZA = filtroABC(data).map(movie =>
+    const ordenZA = filterABC(data).map(movie =>
         generarhtml(movie));
     container.innerHTML = ordenZA.reverse().join('');
 });

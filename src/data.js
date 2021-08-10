@@ -15,7 +15,7 @@ export const filtroDirector = (data, selectDirector) => {
 };
 
 
-export const filtroProductor = (data, selectProductor) => {
+export const filterProducer= (data, selectProductor) => {
   let filtro;
   if (selectProductor == 1) {
     filtro = data.films.filter(function (moviesByProductor) {
@@ -31,14 +31,14 @@ export const filtroProductor = (data, selectProductor) => {
 
 
 
-export const filtroByMovie = (data, movieSelected) => {
+export const filterByMovie = (data, movieSelected) => {
   let filtro = data.films.filter(function (peopleByMovie) {
     return peopleByMovie.title == movieSelected; //regresara la porcion del objeto que corresponde a dicha peli
   })
   return filtro;
 }
 
-export const filtroByScore = (data, scoreSelected) => {
+export const filterByScore = (data, scoreSelected) => {
   let byScore = data.films.filter(function (MoviesByScore) {
     if (scoreSelected == "NotGood") {
 
@@ -59,7 +59,7 @@ export const filtroByScore = (data, scoreSelected) => {
   return byScore
 }
 
-export const filtroABC = (data) => {
+export const filterABC = (data) => {
   let alfabeticamente=data.films.sort(function(a,b){
       if (a.title > b.title) {
           return 1;
@@ -73,7 +73,7 @@ export const filtroABC = (data) => {
   }
 
 /*Filtro por genero */
-  export const filtroByGender = (data, gender) => {
+  export const filterByGender = (data, gender) => {
     let personajesFiltrados = []; //almacenara lo que cumpla la condicion en la linea 62
     data.films.forEach(dataGhibli => { 
         dataGhibli.people.filter(personajes => {// parapoder acceder a las propiedades de personajes
@@ -85,7 +85,7 @@ export const filtroABC = (data) => {
     //console.log(personajesFiltrados);
     return personajesFiltrados;
 }
-export const filtroBySpecie = (data, specie) => {
+export const filterBySpecie = (data, specie) => {
   let personajesFiltrados = []; //almacenara lo que cumpla la condicion en la linea 62
   data.films.forEach(dataGhibli => { 
       dataGhibli.people.filter(personajes => {// parapoder acceder a las propiedades de personajes

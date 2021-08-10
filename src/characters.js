@@ -1,4 +1,4 @@
-import { filtroByMovie, filtroByGender, filtroBySpecie } from './data.js';// si es entre parentesis estas exportando una function
+import { filterByMovie, filterByGender, filterBySpecie } from './data.js';// si es entre parentesis estas exportando una function
 
 import data from './data/ghibli/ghibli.js';
 
@@ -48,7 +48,7 @@ let listBox = data.films.map(movie =>
 /*filtrado de personaje por pelicula */
 selectMovie.addEventListener('change', function () {
     let movieValue = document.getElementById('movies').value;//agarra el valor del pelicula seleccionada 
-    filtroByMovie(data, movieValue).forEach(Movie => {
+    filterByMovie(data, movieValue).forEach(Movie => {
         let dato = Movie.people.map(valuesPeople => {
             return generarhtml(valuesPeople)
         }
@@ -61,7 +61,7 @@ selectMovie.addEventListener('change', function () {
 /*filtrado por genero*/
 selectGender.addEventListener('change', function() {
     let genderValue= document.getElementById('gender').value;//agarra el valor del genero seleccionada
-   let gender= filtroByGender(data, genderValue).map(dataMovie=>{
+   let gender= filterByGender(data, genderValue).map(dataMovie=>{
         return generarhtml(dataMovie);
 })
 container.innerHTML = gender.join('');
@@ -71,7 +71,7 @@ container.innerHTML = gender.join('');
 
 selectSpecie.addEventListener('change', function() {
     let valorSpecie= document.getElementById('specie').value;//agarra el valor del genero seleccionada
-   let specie= filtroBySpecie(data,valorSpecie).map(dataMovie=>{
+   let specie= filterBySpecie(data,valorSpecie).map(dataMovie=>{
         return generarhtml(dataMovie);
 })
 container.innerHTML = specie.join("");
