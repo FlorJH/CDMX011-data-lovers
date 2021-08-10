@@ -29,22 +29,20 @@ const allMovies = data.films.map(movie =>
 ); container.innerHTML = allMovies.join('');
 
 
-
-
-
 selectDirector.addEventListener('change', function () {
-    let valorDirector = document.getElementById('directores').value;//agarra el valor del director 
-    const directores = filtroDirector(data, valorDirector).map(movie =>
+    let directorValue = document.getElementById('directores').value;//agarra el valor del director 
+    const directors = filtroDirector(data, directorValue).map(movie =>//llamamos a la funcion filtroDirector, e interamaos sobre el resultado y pasamos los atributos del objeto a
+        //funcion generar html
         generarhtml(movie));
-    container.innerHTML = directores.join('');
+    container.innerHTML = directors.join(''); //pintamos en el dom el res de direcotrs 
 
 });
 
 selectProductor.addEventListener('change', function () {
     let valorProductor = document.getElementById('productores').value;//agarra el valor del productor 
-    const productores = filtroProductor(data, valorProductor).map(movie =>
+    const producers = filtroProductor(data, valorProductor).map(movie =>
         generarhtml(movie));
-    container.innerHTML = productores.join('');
+    container.innerHTML = producers.join('');
 });
 
 
@@ -56,17 +54,15 @@ selectScore.addEventListener('change', function () {
 });
 
 btnOrderAZ.addEventListener('click', function () {
-    //let valorScore= document.getElementById('rt-score').value;//agarra el valor del score 
-    const abc = filtroABC(data).map(movie =>
+    const orderAZ = filtroABC(data).map(movie =>
         generarhtml(movie));
-    container.innerHTML = abc.join('');
+    container.innerHTML = orderAZ.join('');
 });
 
 
 btnOrderZA.addEventListener('click', function () {
-    //let valorScore= document.getElementById('rt-score').value;//agarra el valor del score 
-    const abc = filtroABC(data).map(movie =>
+    const ordenZA = filtroABC(data).map(movie =>
         generarhtml(movie));
-    container.innerHTML = abc.reverse().join('');
+    container.innerHTML = ordenZA.reverse().join('');
 });
 

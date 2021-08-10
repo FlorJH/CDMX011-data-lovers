@@ -72,9 +72,30 @@ export const filtroABC = (data) => {
   return alfabeticamente;
   }
 
-
-
-
+/*Filtro por genero */
+  export const filtroByGender = (data, gender) => {
+    let personajesFiltrados = []; //almacenara lo que cumpla la condicion en la linea 62
+    data.films.forEach(dataGhibli => { 
+        dataGhibli.people.filter(personajes => {// parapoder acceder a las propiedades de personajes
+           if(personajes.gender == gender){//condicion para que vigile que personajes son del genero que el usuario selecciono valor que se guarda en "gender"
+            personajesFiltrados.push(personajes); 
+           }
+        })
+    })
+    //console.log(personajesFiltrados);
+    return personajesFiltrados;
+}
+export const filtroBySpecie = (data, specie) => {
+  let personajesFiltrados = []; //almacenara lo que cumpla la condicion en la linea 62
+  data.films.forEach(dataGhibli => { 
+      dataGhibli.people.filter(personajes => {// parapoder acceder a las propiedades de personajes
+         if(personajes.specie == specie){//condicion para que vigile que personajes son del genero que el usuario selecciono valor que se guarda en "gender"
+          personajesFiltrados.push(personajes); 
+         }
+      })
+  })
+  return personajesFiltrados;
+}
 
 
 

@@ -1,71 +1,83 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Studio Ghibli</title>
-    <link rel="stylesheet" href="style.css" />
-    
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-  integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  </head>
 
-  <body>
-    <header> 
-      <div class="wrapper">
+<head>
+  <meta charset="utf-8">
+  <title>Studio Ghibli</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body>
+  <header>
+    <div class="wrapper">
       <div class="logo">Studio Ghibli</div>
       <nav>
-				<a href="index.html"><i class="fas fa-home"></i></a>
-				<a href="movies.html">Movies</a>
-				<a href="characters.html">Characters</a>
-				
-			</nav>
+        <a href="index.html"><i class="fas fa-home"></i></a>
+        <a href="movies.html">Movies</a>
+        <a href="characters.html">Characters</a>
+
+      </nav>
     </div>
-    </header>
+  </header>
 
 
-    <main>
-      <div id="filters">
-        <div class="box"> 
-          <!-- <label class="directorList">Directores</label> -->
-              <select id="movies" name="select" >
-                <option value="1" selected>Filter by Movie</option>
-              </select>
-        </div>
-        <div class="box">
-          <select id="gender" name="select" >
-           <option value="1" selected>Filter by Gender</option>
-           <option value="Female">Female</option>
-           <option value="Male">Male</option>
-           <option value="NA">NA</option>
-         </select>
-        </div>
-             <div class="box">
-              <select id="rt-score" name="select" >
-                <option value="1" selected>Filter by Specie</option>
-                <option value="80">Great</option>
-                <option value="50">Good</option>
-                <option value="49">Not good</option>
-              </select>
-             </div>
-        
-        </div>
-       <div id="card">
+  <main>
+    <div id="filters">
+      <div class="box">
+        <!-- <label class="directorList">Directores</label> -->
+        <select id="movies" name="select">
+          <option value="1" selected>Filter by Movie</option>
+        </select>
+      </div>
+      <div class="box">
+        <select id="gender" name="select">
+          <option value="1" selected>Filter by Gender</option>
+          <option value="Female">Female</option>
+          <option value="Male">Male</option>
+          <option value="NA">NA</option>
+        </select>
+      </div>
+      <div class="box">
+        <select id="specie" name="select">
+          <option value="1" selected>Filter by Specie</option>
+          <option value="Human">Human</option>
+          <option value="Witch">Witch</option>
+          <option value="Totoro">Totoro</option>
+          <option value="Dog">Dog</option>
+          <option value="Cat">Cat</option>
+          <option value="Raccoon Dog">Raccoon dog</option>
+          <option value="Wizard">Wizard</option>
+          <option value="Bird">Bird</option>
+          <option value="Deity">Deity</option>
+          <option value="Spirit">Spirit</option>
+          <option value="Borrower">Borrower</option>
+          <option value="Demon">Daemon</option>
+          <option value="Unknown">Unknown</option>
+          <option value="Wolf">Wolf</option>
+        </select>
+      </div>
 
-       </div>
-    
+    </div>
+    <div id="card">
+
+    </div>
+
   </main>
 
 
-    <footer>
-      <div class="social">
-       <a href="https://es-la.facebook.com/FansOfStudioGhibli/"><i class="fab fa-facebook fa-3ex"></i></a>
-       <a href="https://twitter.com/JP_GHIBLI"><i class="fab fa-twitter"></i></a>
-       <a href="https://line.me/R/ti/p/@studioghibli?from=page"> <i class="fab fa-line"></i></a>
+  <footer>
+    <div class="social">
+      <a href="https://es-la.facebook.com/FansOfStudioGhibli/"><i class="fab fa-facebook fa-3ex"></i></a>
+      <a href="https://twitter.com/JP_GHIBLI"><i class="fab fa-twitter"></i></a>
+      <a href="https://line.me/R/ti/p/@studioghibli?from=page"> <i class="fab fa-line"></i></a>
       <p class="copyright">Made with <i class="fas fa-heart"></i> for Magali and Flor Angelica Jardinez Hernandez</p>
-      </div>
-    </footer>
-    <script src="characters.js" type="module"></script>
-  </body>
+    </div>
+  </footer>
+  <script src="characters.js" type="module"></script>
+</body>
 
 
 </html>
