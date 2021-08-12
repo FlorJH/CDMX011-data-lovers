@@ -48,13 +48,17 @@ let listBox = data.films.map(movie =>
 /*filtrado de personaje por pelicula */
 selectMovie.addEventListener('change', function () {
     let movieValue = document.getElementById('movies').value;//agarra el valor del pelicula seleccionada 
+   if(movieValue == 1){
+    container.innerHTML = htmlDom;
+   }else{
+   
     filterByMovie(data, movieValue).forEach(Movie => {
         let dato = Movie.people.map(valuesPeople => {
             return generarhtml(valuesPeople)
         }
         ); container.innerHTML = dato.join('');
 
-    });
+    });}
 });
 
 

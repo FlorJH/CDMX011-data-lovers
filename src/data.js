@@ -32,6 +32,7 @@ export const filterProducer= (data, selectProductor) => {
 
 
 export const filterByMovie = (data, movieSelected) => {
+  
   let filtro = data.films.filter(function (peopleByMovie) {
     return peopleByMovie.title == movieSelected; //regresara la porcion del objeto que corresponde a dicha peli
   })
@@ -53,7 +54,7 @@ export const filterByScore = (data, scoreSelected) => {
       return MoviesByScore.rt_score >= 90;
     }
     else {
-      return MoviesByScore.rt_score >= "1"
+      return MoviesByScore.rt_score == "1"
     }
   })
   return byScore
