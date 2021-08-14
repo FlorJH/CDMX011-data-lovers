@@ -11,7 +11,6 @@ const selectScore = document.querySelector('#rt-score');
 const btnOrderAZ = document.querySelector('#orderAZ');
 const btnOrderZA = document.querySelector('#orderZA');
 
-
 //Crea las tarjetas y muestra la data de la pelicula. 
 
 
@@ -19,7 +18,7 @@ function generarhtml(movie) {
     return `
         <div id="cardMovie">
         <img id="imgMovie" src="${movie.poster}">
-        <buttom id="bntViewMovie" class="titleMovie">${movie.title}</button>
+        <button id="bntViewMovie" class="titleMovie" data-id="${movie.id}">${movie.title}</button>
         </div>
         `
 }
@@ -66,3 +65,41 @@ btnOrderZA.addEventListener('click', function () {
     container.innerHTML = ordenZA.reverse().join('');
 });
 
+
+
+
+//
+const btnView= document.querySelectorAll('#bntViewMovie');//busque 
+console.log(btnView);
+btnView.forEach(function(button){
+    button.addEventListener('click', function(event){
+        const id = event.target.dataset.id;
+        console.log( id);
+        const movie = findById(data, id)
+        modalMovies(movie);
+    })
+
+});
+
+export const findById = (data,id) => {
+   let dataMovie= data.films.forEach(dataGhibli => { 
+        return dataGhibli.id == id
+    })
+    return dataMovie
+}
+
+
+
+const modalMovies= (movieData) =>{
+    
+    return `<div class="modal" id="modal1">
+    <div class="modal-dialog">
+      <header class="modal-header">
+        ...
+        <button class="close-modal" aria-label="close modal" data-close>✕</button>
+      </header>
+      <section class="modal-content">...</section>
+      <footer class="modal-footer">...</footer>
+    </div>
+  </div>`
+}
