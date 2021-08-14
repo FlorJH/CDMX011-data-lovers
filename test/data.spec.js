@@ -1,8 +1,11 @@
 import { filtroDirector, filterProducer, filterByScore, filterByMovie, filterABC, filterByGender, filterBySpecie} from '../src/data.js';
-import { yamadas, morita, producerByToru, movieByScore, totoros, wolf, abcz} from './helpers.js'
+import { yamadas, morita, producerByToru, movieByScore, totoros, wolf} from './helpers.js'
+import {ghibliABC} from './dataMock.js'
 //filtroByMovie, filtroProductor
 
 import data from '../src/data/ghibli/ghibli.js';
+
+const ordenGhibli=ghibliABC
 
 describe('ghibli', () => {
   it('should be an object', () => {
@@ -104,7 +107,7 @@ describe('filterABC', () => {
 });
 describe('function ordenado', () => {
 it('A-Z', () => {
-    const filterAZ=filterABC(abcz)
+    const filterAZ=filterABC(ordenGhibli)
     expect(filterAZ).toHaveLength(3);
   });
 });
