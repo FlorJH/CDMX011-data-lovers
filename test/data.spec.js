@@ -1,10 +1,13 @@
-import { filtroDirector, filterProducer, filterByScore } from '../src/data.js';
-import { morita, producerByToru, movieByScore } from './helpers.js'
+import { filtroDirector, filterProducer, filterByScore, filterByMovie, filterABC, filterByGender, filterBySpecie} from '../src/data.js';
+import { yamadas, morita, producerByToru, movieByScore, totoros, wolf} from './helpers.js'
+import {ghibliABC} from './dataMock.js'
 //filtroByMovie, filtroProductor
 
 import data from '../src/data/ghibli/ghibli.js';
 
-describe('data', () => {
+const ordenGhibli=ghibliABC
+
+describe('ghibli', () => {
   it('should be an object', () => {
     expect(typeof data).toBe('object');
   });
@@ -63,30 +66,48 @@ describe('filterByScore', () => {
     expect(filterByScore(data, 'NotGood')).toStrictEqual(movieByScore);
   });
 
-  it('should return "Tales form Earthsea" films after having selected a score "Not good" ', () => {
-    expect(filterByScore(data, 'NotGood')).toStrictEqual(movieByScore);
-  });
-
+  
   it('should return all data films after having selected "Order by Score" ', () => {
     expect(filterProducer(data, '1')).toStrictEqual(data.films);
   });
-
-
 });
 
 
-/*describe('filterByMovie', () => {
-
-});
-
-describe('filterABC', () => {
-
+describe('filterByMovie', () => {
+  it('iis a function', () =>{
+    expect(typeof filterByMovie).toBe('function');
+  });
+  it('should return "people from yamadas movie" after having selected  My Neighbors the Yamadas', () => {
+    expect(filterByMovie(data, 'My Neighbors the Yamadas')).toStrictEqual(yamadas);
+  });
+  
 });
 
 describe('filterByGender', () => {
-
+  it('is a function', () => {
+    expect(typeof filterByGender).toBe('function');
+  });
+  it('should return "Litle Totoro" after having selected  NA', () => {
+    expect(filterByGender(data, 'NA')).toStrictEqual(totoros);
+  });
 });
 
 describe('filterBySpecie', () => {
-
-});*/
+  it('is a function', () => {
+    expect(typeof filterBySpecie).toBe('function');
+  });
+  it('should return "Moro" after having selected  Wolf', () => {
+    expect(filterBySpecie(data, 'Wolf')).toStrictEqual(wolf);
+  });
+});
+describe('filterABC', () => {
+  it('is a function', () => {
+    expect(typeof filterABC).toBe('function');
+  });  
+});
+describe('function ordenado', () => {
+it('A-Z', () => {
+    const filterAZ=filterABC(ordenGhibli)
+    expect(filterAZ).toHaveLength(3);
+  });
+});

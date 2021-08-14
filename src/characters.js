@@ -60,6 +60,7 @@ selectMovie.addEventListener('change', function () {
 });
 
 
+
 /*filtrado por genero*/
 selectGender.addEventListener('change', function() {
     let genderValue= document.getElementById('gender').value;//agarra el valor del genero seleccionada
