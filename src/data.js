@@ -32,7 +32,6 @@ export const filterProducer= (data, selectProductor) => {
 
 
 export const filterByMovie = (data, movieSelected) => {
-  
   let filtro = data.films.filter(function (peopleByMovie) {
     return peopleByMovie.title == movieSelected; //regresara la porcion del objeto que corresponde a dicha peli
   })
@@ -83,20 +82,28 @@ export const filterABC = (data) => {
            }
         })
     })
-    //console.log(personajesFiltrados);
     return personajesFiltrados;
 }
 export const filterBySpecie = (data, specie) => {
   let personajesFiltrados = []; //almacenara lo que cumpla la condicion en la linea 62
+  if(specie != 1){//1
   data.films.forEach(dataGhibli => { 
       dataGhibli.people.filter(personajes => {// parapoder acceder a las propiedades de personajes
          if(personajes.specie == specie){//condicion para que vigile que personajes son del genero que el usuario selecciono valor que se guarda en "gender"
           personajesFiltrados.push(personajes); 
          }
       })
-  })
+  })}
+  else{
+    data.films.forEach(dataGhibli => { 
+      dataGhibli.people.forEach(personajes => { 
+        return personajesFiltrados.push(personajes)
+       })
+    })
+  }
   return personajesFiltrados;
 }
+
 
 
 

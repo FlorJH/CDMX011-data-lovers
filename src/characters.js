@@ -25,10 +25,10 @@ function generarhtml(values) {
     <div id="cardPeople">
     <img id="imgPeople" src="${values.img}">
     <div id="info">
-    <h3 id="name" >${values.name}</h4>
-    <h5>Genero: ${values.gender}</h5>
-    <h5>Age: ${values.age}</h5>
-    <h5>Specie: ${values.specie}</h5>
+    <h3 id="name">${values.name}</h4>
+    <h4>Genero: ${values.gender}</h4>
+    <h4>Age: ${values.age}</h4>
+    <h4>Specie: ${values.specie}</h4>
     </div>
     </div>
     `
@@ -40,7 +40,6 @@ let listBox = data.films.map(movie =>
     `
     <option value="${movie.title}">${movie.title}</option>
     `
-    //Es para que vaya agregando 
 ); selectMovie.innerHTML = `<option value="1" selected>Filter by Movie</option>` + listBox;
 
 
@@ -51,7 +50,6 @@ selectMovie.addEventListener('change', function () {
    if(movieValue == 1){
     container.innerHTML = htmlDom;
    }else{
-   
     filterByMovie(data, movieValue).forEach(Movie => {
         let dato = Movie.people.map(valuesPeople => {
             return generarhtml(valuesPeople)
