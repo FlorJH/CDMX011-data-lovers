@@ -89,9 +89,10 @@ export const filterABC = (data) => {
            }
         })
     })
-
+}
     return personajesFiltrados;
 }
+
 export const filterBySpecie = (data, specie) => {
   let personajesFiltrados = []; //almacenara lo que cumpla la condicion en la linea 62
   if(specie != 1){//1
@@ -112,12 +113,9 @@ export const filterBySpecie = (data, specie) => {
   return personajesFiltrados;
 }
 
-
-
-
-
-
-
-
-
-
+export const findById = (data,id) => {
+  let dataMovie= data.films.filter(dataGhibli => { 
+       return dataGhibli.id == id
+   })
+   return dataMovie
+}

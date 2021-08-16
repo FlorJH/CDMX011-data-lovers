@@ -1,11 +1,11 @@
-import { filtroDirector, filterProducer, filterByScore, filterByMovie, filterABC, filterByGender, filterBySpecie} from '../src/data.js';
-import { yamadas, morita, producerByToru, movieByScore, totoros, wolf} from './helpers.js'
+import { filtroDirector, filterProducer, filterByScore, filterByMovie, filterABC, filterByGender, filterBySpecie, findById} from '../src/data.js';
+import { yamadas, morita, producerByToru, movieByScore, totoros, wolf, pomPok} from './helpers.js'
 import {ghibliABC} from './dataMock.js'
 //filtroByMovie, filtroProductor
 
 import data from '../src/data/ghibli/ghibli.js';
 
-const ordenGhibli=ghibliABC
+const ordenGhibli=ghibliABC;
 
 describe('ghibli', () => {
   it('should be an object', () => {
@@ -66,7 +66,6 @@ describe('filterByScore', () => {
     expect(filterByScore(data, 'NotGood')).toStrictEqual(movieByScore);
   });
 
-  
   it('should return all data films after having selected "Order by Score" ', () => {
     expect(filterProducer(data, '1')).toStrictEqual(data.films);
   });
@@ -79,9 +78,9 @@ describe('filterByMovie', () => {
   });
   it('should return "people from yamadas movie" after having selected  My Neighbors the Yamadas', () => {
     expect(filterByMovie(data, 'My Neighbors the Yamadas')).toStrictEqual(yamadas);
-  });
-  
+  }); 
 });
+
 
 describe('filterByGender', () => {
   it('is a function', () => {
@@ -92,6 +91,7 @@ describe('filterByGender', () => {
   });
 });
 
+
 describe('filterBySpecie', () => {
   it('is a function', () => {
     expect(typeof filterBySpecie).toBe('function');
@@ -100,14 +100,30 @@ describe('filterBySpecie', () => {
     expect(filterBySpecie(data, 'Wolf')).toStrictEqual(wolf);
   });
 });
+
+
+
 describe('filterABC', () => {
   it('is a function', () => {
     expect(typeof filterABC).toBe('function');
   });  
 });
+
 describe('function ordenado', () => {
-it('A-Z', () => {
-    const filterAZ=filterABC(ordenGhibli)
-    expect(filterAZ).toHaveLength(3);
+  it('A-Z', () => {
+      const filterAZ=filterABC(ordenGhibli)
+      expect(filterAZ).toHaveLength(3);
+    });
   });
-});
+
+describe('findById', () => {
+ 
+  it('is a function', () => {
+    expect(typeof findById).toBe('function');
+  }); 
+
+  it('Return te movie pom Poko when find the id  1b67aa9a-2e4a-45af-ac98-64d6ad15b16c', () => {
+    expect(findById (data, '1b67aa9a-2e4a-45af-ac98-64d6ad15b16c')).toStrictEqual(pomPok);
+  }); 
+
+  });

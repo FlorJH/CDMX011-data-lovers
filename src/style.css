@@ -2,35 +2,39 @@
 	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 #homePage{
-background: #2a4e63ef;
+/*background: #2a4e63ef;*/
 display: flex;
 flex-direction: column;
 align-items: center;
 }
 #banner{
-width: 95vw;	
+width: 90vw;	
 height: 50vh;
-background: #fff;
+background: rgb(4, 207, 243);
+
+margin: 0vh 5vw ;
 }
-.bestMovies{
-	margin-top: 5vh;
+.bestCards{
+	
+	margin: 5vh 5vw 0vh 5vw;
 	text-align: center;
 	padding-top: 10px;
-	width: 95vw;	
+	width: 90vw;	
 	height: 55vh;
-	background-image: linear-gradient(180deg, #2a4e6354 0%, #fbfeff 100%);
+	background-image: linear-gradient(180deg, rgb(195, 252, 223) 0%, #fbfeff 100%);
 	
 	border-radius: 10px;
 }
 .history{
-	margin-top: 5vh;
+	box-shadow: 0px 10px 15px rgba(219, 218, 218, 0.37);
+	margin: 5vh 5vw 0vh 5vw;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	text-align: center;
-	width: 95vw;	
+	width: 90vw;	
 	height: 80vh;
-	background-color: #fff;
+	background-color: mintcream;
 	border-radius: 10px;
 }
 .history > img{
@@ -40,10 +44,58 @@ background: #fff;
 	margin: 0vh 3vw;
 }
 #description >p{
-	margin: 0vh 3vw 0vh 0vw;
+	padding: 0px 30px;
 	font-size: 1em;
 	text-align: justify;
 }
+.historyHayao{
+	margin: 5vh 5vw 0vh 5vw;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	text-align: center;
+	width: 90vw;	
+	height: 80vh;
+	background-color: mintcream;
+	border-radius: 10px;
+	box-shadow: 0px 10px 15px rgba(219, 218, 218, 0.37);
+}
+.historyHayao > img{
+	width: 35vw;	
+    height: 55vh;
+	border-radius: 8px;
+	margin: 0vh 3vw;
+}
+.museo{
+	margin: 5vh 5vw 0vh 5vw;
+	display: flex;
+	flex-direction: row;
+ 	flex-wrap: wrap;
+	justify-content: center;
+	align-self: center;
+	justify-content:space-evenly;
+	width: 90vw;	
+	height: 60vh;
+}
+#cardsGhibli{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	align-content: stretch;
+	margin: 5vh 3vw 5vh 3vw;
+	background-color:  mintcream;
+	width: 20vw;	
+	height: 50vh;
+	box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.377);
+	border-style: none;
+}
+#cardsGhibli > button{
+	background-color: mintcream;
+	border-style: none;
+	cursor: pointer;
+}
+
+
 #bntViewMovie{
 	text-align: center;
 	padding: 0px 8px;
@@ -218,7 +270,7 @@ footer{
 		  display: flex;
 		  flex-direction: row;
 		  justify-content: space-around;
-		  background-color: #defe9a73;
+		  background-color: mintcream;
 		  margin: 40px 160px;
 	  }
 	  
@@ -285,6 +337,97 @@ text-align: center;
 font-size: 1.3em;
 }
 
+
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 80px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.479); /* Black w/ opacity */
+	overflow: auto; /* Enable scroll if needed */
+	
+  }
+  
+  /* Modal Content */
+
+  .description{
+	  display: flex;
+	  flex-direction: row;
+	  align-content: center;
+	  padding: 20px 20px;
+	  font-size: 1.2em;
+	  text-align: justify;
+	   }
+ 
+  .imgData{
+	
+	  margin: 20px 20px 10px 20px;
+  }
+  
+  #sub-columna{
+	  display: flex;
+	  flex-direction: column;
+	  padding-right: 20px;
+	  padding-left: 10px;
+  }
+  .modal-content {
+	position: relative;
+	background-color: #fefefe;
+	margin: auto;
+	padding: 0;
+	border: 1px solid #888;
+	width: 80%;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+	-webkit-animation-name: animatetop;
+	-webkit-animation-duration: 0.4s;
+	animation-name: animatetop;
+	animation-duration: 0.4s;
+	
+  }
+  
+  /* Add Animation */
+  @-webkit-keyframes animatetop {
+	from {top:-300px; opacity:0} 
+	to {top:0; opacity:1}
+  }
+  
+  @keyframes animatetop {
+	from {top:-300px; opacity:0}
+	to {top:0; opacity:1}
+  }
+  
+  /* The Close Button */
+  .close {
+	color: white;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+  }
+  
+  .modal-header {
+	padding: 2px 16px;
+	background-color: #143dd0d2;
+	color: white;
+  }
+  
+
+  .modal-footer {
+	padding: 2px 16px;
+	background-color: #143dd0d2;
+	color: white;
+  }
 
 /* Media Query*/
 
