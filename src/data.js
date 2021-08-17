@@ -71,6 +71,7 @@ export const filterABC = (data) => {
   });
   return alfabeticamente;
   }
+  
 
 /*Filtro por genero */
   export const filterByGender = (data, gender) => {
@@ -95,7 +96,7 @@ export const filterABC = (data) => {
 
 export const filterBySpecie = (data, specie) => {
   let personajesFiltrados = []; //almacenara lo que cumpla la condicion en la linea 62
-  if(specie != 1){//1
+  if(specie != '1'){//1
   data.films.forEach(dataGhibli => { 
       dataGhibli.people.filter(personajes => {// parapoder acceder a las propiedades de personajes
          if(personajes.specie == specie){//condicion para que vigile que personajes son del genero que el usuario selecciono valor que se guarda en "gender"

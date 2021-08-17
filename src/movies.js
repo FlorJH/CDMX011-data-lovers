@@ -12,8 +12,6 @@ const btnOrderAZ = document.querySelector('#orderAZ');
 const btnOrderZA = document.querySelector('#orderZA');
 
 //Crea las tarjetas y muestra la data de la pelicula. 
-
-
 function generarhtml(movie) {
     return `
         <div id="cardMovie">

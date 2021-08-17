@@ -92,7 +92,7 @@ border-radius: 45px;
 	height:auto;
 	
 }
-#cardsGhibli{
+.cardsGhibli{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
