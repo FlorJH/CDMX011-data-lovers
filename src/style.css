@@ -1,69 +1,53 @@
 *{
 	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-#homePage{
-/*background: #2a4e63ef;*/
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-#banner{
-width: 90vw;	
-height: 55vh;
-background: rgb(4, 207, 243);
-margin: 0vh 5vw ;
-display: flex;
-flex-direction: column;
-align-items: center;
 
-}
-#banner>img {
+
+#banner >img {
+margin: 0vh 4vw 3ch 4vw;
 width: 90vw;	
-height: 55vh;
-margin-bottom: 5vh;
+height: 65vh;
 }
 #viewAllMovies{
-position: relative;
-bottom: 100px;
-width: 15vw;	
-height: 20vh;
-padding: 10px;
+position: absolute;
+left: 40vw;
+bottom: 15vh;
+width: 200px;	
+height: 30px;
+padding:10px 10px;
 font-size: large;
 background:#143dd0d2;
 color: #ffffff;
 text-decoration: none;
 text-align: center;
 border-radius: 45px;
-
-
 }
 
 .bestCards{
-	
 	margin: 5vh 5vw 0vh 5vw;
 	text-align: center;
 	padding-top: 10px;
 	width: 90vw;	
 	height: 55vh;
 	background-image: linear-gradient(180deg, rgb(195, 252, 223) 0%, #fbfeff 100%);
-	
 	border-radius: 10px;
 }
 .history{
 	box-shadow: 0px 10px 15px rgba(219, 218, 218, 0.37);
-	margin: 5vh 5vw 0vh 5vw;
+	margin: 8vh 4vw;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	text-align: center;
 	width: 90vw;	
-	height: 80vh;
-	background-color: rgb(107, 188, 255);
+	height:auto;
+	padding: 10px;
+	background-color:mintcream;
 	border-radius: 10px;
 }
 .history > img{
 	width: 25vw;	
-    height: 40vh;
+    height: auto;
 	border-radius: 8px;
 	margin: 0vh 3vw;
 }
@@ -73,13 +57,14 @@ border-radius: 45px;
 	text-align: justify;
 }
 .historyHayao{
-	margin: 5vh 5vw 0vh 5vw;
+	margin: 10vh 5vw 5vh 4vw;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	text-align: center;
 	width: 90vw;	
-	height: 80vh;
+	height: auto;
+	padding: 10px;
 	background-color: mintcream;
 	border-radius: 10px;
 	box-shadow: 0px 10px 15px rgba(219, 218, 218, 0.37);
@@ -91,9 +76,9 @@ border-radius: 45px;
 }
 .historyHayao > img{
 	width: 35vw;	
-    height: 55vh;
+    height:auto;
 	border-radius: 8px;
-	margin: 0vh 3vw;
+	margin: 5vh 3vw;
 }
 .museo{
 	margin: 5vh 5vw 0vh 5vw;
@@ -104,7 +89,8 @@ border-radius: 45px;
 	align-self: center;
 	justify-content:space-evenly;
 	width: 90vw;	
-	height: 60vh;
+	height:auto;
+	
 }
 #cardsGhibli{
 	display: flex;
@@ -113,10 +99,11 @@ border-radius: 45px;
 	align-content: stretch;
 	margin: 5vh 3vw 5vh 3vw;
 	background-color:  mintcream;
-	width: 20vw;	
-	height: 50vh;
+	width: 35vw;	
+	height: auto;
 	box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.377);
 	border-style: none;
+	border-radius: 10px;
 }
 #cardsGhibli > button{
 	background-color: mintcream;
@@ -230,10 +217,6 @@ header nav a {
 	font-weight: bold;
 	font-size:1.3em;
 	border-radius: 45px;
-	/*font-weight:bold;
-	-webkit-transition:all 500ms ease;
-	-o-transition:all 500ms ease;
-	transition:all 500ms ease;*/
 }
 
  a:hover {
@@ -332,15 +315,6 @@ footer{
 	box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.377);
     border-radius: 20px;
 	background: linear-gradient(180deg, #2a4e63cb 37.47%, rgba(80, 232, 253, 0.37) 99.99%);
-	/*background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);*/
-	/*background-image: linear-gradient(60deg, #96deda 0%, #50c9c3 100%);*/
-	/*background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(37, 144, 251, 0.678) 0.1%, rgba(0, 6, 128, 0.664) 99.8% );*/
-	/*background-image: linear-gradient( 0deg,  rgba(71,114,148,1) 14.9%, rgba(149,245,211,1) 77.9% );*/
-	/*background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);*/
-	/*background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);*/
-	/*background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);*/
-	/*background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);*/
- 	/*background-image: linear-gradient(to top, #b8ecbf 0%, white 100%);*/
 	}
 
 
@@ -460,11 +434,56 @@ font-size: 1.3em;
 
 /* Media Query*/
 
-@media (max-width: 1050px) { /* si es menor de 1050 px de ancho realiza lo que esta en el media*/
+ @media only screen and (max-width: 980px) and (min-width: 821px) {/* si es menor de 1050 px de ancho realiza lo que esta en el media*/
 	
+	/*index*/
+	#banner >img {
+		margin: 0vh 4vw 3ch 4vw;
+		width: 90vw;	
+		height: 50vh;
+		}
+		#viewAllMovies{
+		position: absolute;
+		left: 38vw;
+		bottom: 35vh;
+		width: 230px;	
+		height: 40px;
+		padding:10px 10px;
+		font-size: x-large;
+		}
+		
+		.history > img{
+			display: none;
+		}
+
+		#description >p{
+			font-size: 1.1em;
+		}
+	
+		.historyHayao{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			font-size: 1.1em
+			}
+
+			.historyHayao > img{
+				width: 25vw;	
+				margin: 0vh 3vw 1vh;
+			}
 	#card{
 		margin: 3vh 3vw;
 		/*background-color: #05334d;*/
+	}
+	#cardMovie{	
+		width: 260px;
+		height: 330px;
+	}
+	#imgMovie{ 	
+		width: 260px;
+		height: 330px;	
+		border-radius: 20px;
 	}
 	#bntViewMovie{
 		margin-top: -6.5vw;
@@ -487,7 +506,7 @@ font-size: 1.3em;
 	header::before{
 		width: 100%;
 		height: 150px;
-		background-color: #275f80cb;
+		background-color: #349cd8cb;
 		/*background-color: #236f9bcb;*/
 	}
 	header nav {
@@ -515,7 +534,17 @@ width: 210px;
 font-size: 2.3vh;
 }
 
+/*modal*/
+.modal {
+	padding-top: 250px; /* Location of the box */
+	font-size: 1.1em;	
+  }
 
-	
+  #cardPeople{
 
+    width: 260px;
+	height: 330px;
+	font-size: 1.1em;
+	background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);;
+	}
 }
