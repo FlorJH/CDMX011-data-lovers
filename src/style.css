@@ -10,7 +10,7 @@ align-items: center;
 #banner{
 width: 90vw;	
 height: 50vh;
-background: rgb(4, 207, 243);
+background: rgb(244, 249, 250);
 
 margin: 0vh 5vw ;
 }
@@ -59,6 +59,11 @@ margin: 0vh 5vw ;
 	background-color: mintcream;
 	border-radius: 10px;
 	box-shadow: 0px 10px 15px rgba(219, 218, 218, 0.37);
+}
+#hayaoDescription >p{
+	padding: 0px 30px;
+	font-size: 1em;
+	text-align: justify;
 }
 .historyHayao > img{
 	width: 35vw;	
@@ -431,10 +436,10 @@ font-size: 1.3em;
 
 /* Media Query*/
 
-@media (max-width: 1050px) { /* si es menor de 1000 px de ancho realiza lo que esta en el media*/
+@media (max-width: 1050px) { /* si es menor de 1050 px de ancho realiza lo que esta en el media*/
 	
 	#card{
-		margin: 3vh 2vw;
+		margin: 3vh 3vw;
 		/*background-color: #05334d;*/
 	}
 	#bntViewMovie{
