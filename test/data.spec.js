@@ -1,11 +1,11 @@
 import { filtroDirector, filterProducer, filterByScore, filterByMovie, filterABC, filterByGender, filterBySpecie, findById} from '../src/data.js';
 import { yamadas, morita, producerByToru, movieByScore, totoros, wolf, pomPok} from './helpers.js'
-import {ghibliABC} from './dataMock.js'
+//import {ghibliABC} from './dataMock.js'
 //filtroByMovie, filtroProductor
 
 import data from '../src/data/ghibli/ghibli.js';
 
-const ordenGhibli=ghibliABC;
+//const ordenGhibli=ghibliABC;
 
 describe('ghibli', () => {
   it('should be an object', () => {
@@ -66,8 +66,12 @@ describe('filterByScore', () => {
     expect(filterByScore(data, 'NotGood')).toStrictEqual(movieByScore);
   });
 
-  it('should return all data films after having selected "Order by Score" ', () => {
-    expect(filterProducer(data, '1')).toStrictEqual(data.films);
+  it('should return the great movies after have selected "score Great" ', () => {
+    expect(filterByScore(data, 'Good')).toHaveLength(6);
+  });
+
+  it('should return the great movies after have selected "score Great" ', () => {
+    expect(filterByScore(data, 'Great')).toHaveLength(13);
   });
 });
 
@@ -89,6 +93,9 @@ describe('filterByGender', () => {
   it('should return "Litle Totoro" after having selected  NA', () => {
     expect(filterByGender(data, 'NA')).toStrictEqual(totoros);
   });
+  it('should return all people after have selected "filter by Gender"', () => {
+    expect(filterByGender(data, '1')).toHaveLength(171);
+});
 });
 
 
@@ -99,6 +106,9 @@ describe('filterBySpecie', () => {
   it('should return "Moro" after having selected  Wolf', () => {
     expect(filterBySpecie(data, 'Wolf')).toStrictEqual(wolf);
   });
+it('should return all people after have selected "filter by Specie"', () => {
+    expect(filterBySpecie(data, '1')).toHaveLength(171);
+});
 });
 
 
@@ -107,14 +117,12 @@ describe('filterABC', () => {
   it('is a function', () => {
     expect(typeof filterABC).toBe('function');
   });  
-});
 
-describe('function ordenado', () => {
-  it('A-Z', () => {
-      const filterAZ=filterABC(ordenGhibli)
-      expect(filterAZ).toHaveLength(3);
-    });
+  it('returns an arrangement of 20 movies', () => {
+    expect(filterABC(data)).toHaveLength(20);
   });
+
+});
 
 describe('findById', () => {
  
